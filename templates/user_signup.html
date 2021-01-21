@@ -1,0 +1,55 @@
+
+
+{% load static %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="{% static 'css/userregister.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <a href="login/"><input type="submit"  name="" value="Login"/></a><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <div id="myTabContent">
+                            <div class="tab-pane" >
+                                <form  method='post' class="row register-form">
+                                  {% csrf_token %}
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ userform.first_name }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ userform.last_name }}
+                                        </div>
+                                      <div class="form-group">
+                                            {{ userform.username }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ userform.password1 }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ userform.password2 }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{ userform.email }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ profileform.phone }}
+                                        </div>
+                                    <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
